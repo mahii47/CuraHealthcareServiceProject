@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-15T17:35:31 IST" name="Default suite" finished-at="2025-03-15T17:35:51 IST" duration-ms="20586">
+    <groups>
+      <group name="Form">
+        <method signature="LoginTest.FillForm()[pri:3, instance:Test.LoginTest@7817fd62]" name="FillForm" class="Test.LoginTest"/>
+      </group> <!-- Form -->
+      <group name="Login">
+        <method signature="LoginTest.ValidLogin()[pri:2, instance:Test.LoginTest@7817fd62]" name="ValidLogin" class="Test.LoginTest"/>
+        <method signature="LoginTest.invalidLoginTest()[pri:1, instance:Test.LoginTest@7817fd62]" name="invalidLoginTest" class="Test.LoginTest"/>
+      </group> <!-- Login -->
+    </groups>
+    <test started-at="2025-03-15T17:35:31 IST" name="Default test" finished-at="2025-03-15T17:35:51 IST" duration-ms="20586">
+      <class name="Test.LoginTest">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:Test.LoginTest@7817fd62]" started-at="2025-03-15T17:35:31 IST" name="invokeBrowser" finished-at="2025-03-15T17:35:39 IST" duration-ms="8521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invokeBrowser -->
+        <test-method signature="makeAppointment()[pri:0, instance:Test.LoginTest@7817fd62]" started-at="2025-03-15T17:35:39 IST" name="makeAppointment" finished-at="2025-03-15T17:35:40 IST" duration-ms="662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makeAppointment -->
+        <test-method signature="invalidLoginTest()[pri:1, instance:Test.LoginTest@7817fd62]" started-at="2025-03-15T17:35:40 IST" name="invalidLoginTest" finished-at="2025-03-15T17:35:43 IST" duration-ms="3461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidLoginTest -->
+        <test-method signature="ValidLogin()[pri:2, instance:Test.LoginTest@7817fd62]" started-at="2025-03-15T17:35:43 IST" name="ValidLogin" finished-at="2025-03-15T17:35:48 IST" duration-ms="4040" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidLogin -->
+        <test-method signature="FillForm()[pri:3, instance:Test.LoginTest@7817fd62]" started-at="2025-03-15T17:35:48 IST" name="FillForm" finished-at="2025-03-15T17:35:51 IST" depends-on-methods="Test.LoginTest.ValidLogin" duration-ms="3423" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FillForm -->
+        <test-method is-config="true" signature="close()[pri:0, instance:Test.LoginTest@7817fd62]" started-at="2025-03-15T17:35:51 IST" name="close" finished-at="2025-03-15T17:35:51 IST" duration-ms="362" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- Test.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
