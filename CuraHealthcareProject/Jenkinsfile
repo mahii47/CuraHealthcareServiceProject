@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+      
+
+        stage('Maven clean') {
+            steps {
+                dir("CuraHealthcareProject") {  // 🔄 Navigate into the correct folder
+                    bat 'dir'  // 🔍 Verify `pom.xml`
+                    powershell 'mvn clean'
+                }
+            }
+        }
+        
+         stage('Maven Test') {
+            steps {
+                dir("CuraHealthcareProject") {  // 🔄 Navigate into the correct folder
+                    bat 'dir'  // 🔍 Verify `pom.xml`
+                    powershell 'mvn test'
+                }
+            }
+        }
+    }
+}
