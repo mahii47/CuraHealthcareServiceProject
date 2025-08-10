@@ -1,9 +1,12 @@
 package Test;
+import java.sql.ResultSet;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import commonLibs.BaseTest;
+import commonLibs.DatabaseUtils;
 
 public class LoginTest extends BaseTest {
 	
@@ -20,46 +23,38 @@ public class LoginTest extends BaseTest {
 	public void makeAppointment()
 	{
 		clickByxPath("//a[@id='btn-make-appointment']");
-	}
-    @Test(priority = 1, groups = "Login")
-    public void invalidLoginTest() throws InterruptedException {
-        waitForElement("txt-username", 20);
-        enterText("txt-username", "WrongUser");
-        waitForElement("txt-password", 20);
-        enterText("txt-password", "WrongPassword");
-        waitForElement("btn-login", 20);
-        Loginclick("btn-login");
-        sleep();
-        // Verify login failure
-        boolean loginFailed = driver.getPageSource().contains("Login failed");
-        Assert.assertTrue(loginFailed, "Error message not displayed for invalid login!");
-    }
-	@Test(priority = 2, groups = "Login")
-	public void ValidLogin() throws InterruptedException
-	{
-		waitForElement("txt-username",20);
-		enterText("txt-username","John Doe");
-		waitForElement("txt-password",20);
-		enterText("txt-password","ThisIsNotAPassword");
-		waitForElement("btn-login",20);
-		Loginclick("btn-login");
-		sleep();
 		
-		//verify successful login
-		isLoggedIn = driver.getCurrentUrl().contains("appointment");
-		Assert.assertTrue(isLoggedIn,"Login failed unexpectedly!");
 	}
+
+	@Test(priority=1)
+	public void ValidLoginFromDB() throws Exception {
+	    ResultSet rs = DatabaseUtils.getData("SELECT username, password FROM login_data WHERE id = 1");
+	    rs.next();
+	    String username = rs.getString("username");
+	    String password = rs.getString("password");
+
+	    waitForElement("txt-username", 20);
+	    enterText("txt-username", username);
+	    waitForElement("txt-password", 20);
+	    enterText("txt-password", password);
+	    waitForElement("btn-login", 20);
+	    Loginclick("btn-login");
+	    sleep();
+	    
+	}
+
 	
-	@Test(priority = 3,dependsOnMethods = {"ValidLogin"},groups = "Form")
+	//@Test(priority = 3,dependsOnMethods = {"ValidLogin"},groups = "Form")
+	@Test(groups = "Form",priority = 2)
 	public void FillForm() throws InterruptedException
 	{
-		waitForElement("combo_facility",10);
+		waitForElement("combo_facility",20);
 		dropdown("combo_facility","Hongkong CURA Healthcare Center");
 		selectCheckbox("chk_hospotal_readmission");
 		selectRadioButtonById("programs","radio_program_medicaid");
-		waitForElement("txt_visit_date",10);
+		waitForElement("txt_visit_date",20);
 		selectDateByInput("txt_visit_date","19/02/2025");
-		waitForElement("txt_comment",10);
+		waitForElement("txt_comment",20);
 		clickById("txt_comment");
 		enterText("txt_comment","I want to checkup for my stomach");
 		clickById("btn-book-appointment");

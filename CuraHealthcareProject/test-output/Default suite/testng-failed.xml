@@ -6,11 +6,8 @@
       <class name="Test.LoginTest">
         <methods>
           <include name="invokeBrowser"/>
-          <include name="makeAppointment"/>
           <include name="close"/>
           <include name="FillForm"/>
-          <include name="invalidLoginTest"/>
-          <include name="ValidLogin"/>
         </methods>
       </class> <!-- Test.LoginTest -->
     </classes>

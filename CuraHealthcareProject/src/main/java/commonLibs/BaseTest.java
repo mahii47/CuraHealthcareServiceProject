@@ -5,9 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.edge.EdgeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest implements IBrowserActions {
@@ -18,7 +22,11 @@ public class BaseTest implements IBrowserActions {
 	public void openBrowser() {
 		// TODO Auto-generated method stub
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--incognito"); // Incognito mode
+		options.addArguments("--start-maximized"); // Optional: start maximized
+		options.addArguments("--disable-notifications"); // Optional: disable popups
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 	}
@@ -59,9 +67,9 @@ public class BaseTest implements IBrowserActions {
 	@Override
 	public void waitForElement(String locator, int timeout) {
 		// TODO Auto-generated method stub
-		wait = new WebDriverWait(driver,Duration.ofSeconds(timeout));
+		wait = new WebDriverWait(driver,Duration.ofSeconds(timeout));	
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
-	}
+}
 	@Override
 	public void logout(String locator) {
 		// TODO Auto-generated method stub	
@@ -96,7 +104,7 @@ public class BaseTest implements IBrowserActions {
 	@Override
 	public void clickById(String locator) {
 		// TODO Auto-generated method stub
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		driver.findElement(By.id(locator)).click();
 	}
 	@Override
