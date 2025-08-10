@@ -25,7 +25,6 @@ public class LoginTest extends BaseTest {
 		clickByxPath("//a[@id='btn-make-appointment']");
 		
 	}
-
 	@Test(priority=1)
 	public void ValidLoginFromDB() throws Exception {
 	    ResultSet rs = DatabaseUtils.getData("SELECT username, password FROM login_data WHERE id = 1");
@@ -42,9 +41,6 @@ public class LoginTest extends BaseTest {
 	    sleep();
 	    
 	}
-
-	
-	//@Test(priority = 3,dependsOnMethods = {"ValidLogin"},groups = "Form")
 	@Test(groups = "Form",priority = 2)
 	public void FillForm() throws InterruptedException
 	{
