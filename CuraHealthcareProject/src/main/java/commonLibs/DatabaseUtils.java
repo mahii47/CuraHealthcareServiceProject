@@ -13,6 +13,6 @@ public class DatabaseUtils {
 	 public static ResultSet getData(String query) throws Exception {
 	        Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
 	        Statement stmt = con.createStatement();
-	        return stmt.executeQuery(query);
+	         return stmt.executeQuery(query);
 	 	}
 }
