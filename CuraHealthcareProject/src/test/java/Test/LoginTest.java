@@ -1,6 +1,7 @@
 package Test;
 import java.sql.ResultSet;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -25,9 +26,26 @@ public class LoginTest extends BaseTest {
 		clickByxPath("//a[@id='btn-make-appointment']");
 		
 	}
-	@Test(priority=1)
-	public void ValidLoginFromDB() throws Exception {
-	    ResultSet rs = DatabaseUtils.getData("SELECT username, password FROM login_data WHERE id = 1");
+	@Test(priority = 1)
+	public void invalidLogin1() throws Exception
+	{
+		LoginFromDB(1);
+	}
+	
+	@Test(priority = 2)
+	public void invalidLogin2() throws Exception
+	{
+		LoginFromDB(2);	
+	}
+	
+	@Test(priority = 3)
+	public void login() throws Exception
+	{
+		LoginFromDB(3);
+	}
+	
+	public void LoginFromDB(int id) throws Exception {
+	    ResultSet rs = DatabaseUtils.getData("SELECT username, password FROM login_data WHERE id = "+id);
 	    rs.next();
 	    String username = rs.getString("username");
 	    String password = rs.getString("password");
@@ -41,19 +59,32 @@ public class LoginTest extends BaseTest {
 	    sleep();
 	    
 	}
-	@Test(groups = "Form",priority = 2)
-	public void FillForm() throws InterruptedException
+	@Test(priority = 4)
+	public void ValidForm() throws Exception
 	{
+		FillForm(1);
+	}
+	public void FillForm(int id) throws Exception
+	{
+		ResultSet rs = DatabaseUtils.getData("Select facility,Visit_Date,Comment from fill_form where id ="+id);
+		rs.next();
+		
+		String facility = rs.getString("facility");
+		String Visit_Date = rs.getString("Visit_Date");
+		String Comment = rs.getString("Comment");
+		
 		waitForElement("combo_facility",20);
-		dropdown("combo_facility","Hongkong CURA Healthcare Center");
+		dropdown("combo_facility",facility);
 		selectCheckbox("chk_hospotal_readmission");
 		selectRadioButtonById("programs","radio_program_medicaid");
 		waitForElement("txt_visit_date",20);
-		selectDateByInput("txt_visit_date","19/02/2025");
+		selectDateByInput("txt_visit_date",Visit_Date);
 		waitForElement("txt_comment",20);
 		clickById("txt_comment");
-		enterText("txt_comment","I want to checkup for my stomach");
+		enterText("txt_comment",Comment);
 		clickById("btn-book-appointment");
+		String url = driver.getCurrentUrl();
+		Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary", url);
 		sleep();
 	}
 	@AfterClass

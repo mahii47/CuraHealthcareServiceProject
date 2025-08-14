@@ -1,4 +1,5 @@
 package commonLibs;
+import java.sql.ResultSet;
 import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
@@ -91,6 +92,7 @@ public class BaseTest implements IBrowserActions {
 			checkbox.click();
 		}
 	}
+
 	@Override
 	public void selectDateByInput(String locator, String date) {
 		// TODO Auto-generated method stub

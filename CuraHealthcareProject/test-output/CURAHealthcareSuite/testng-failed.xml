@@ -7,7 +7,7 @@
         <methods>
           <include name="invokeBrowser"/>
           <include name="close"/>
-          <include name="FillForm"/>
+          <include name="InvalidDate"/>
         </methods>
       </class> <!-- Test.LoginTest -->
     </classes>
