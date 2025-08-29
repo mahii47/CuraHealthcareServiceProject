@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-CURAHealthcareSuite" class="navigator-link">
-              <span class="suite-name border-failed">CURAHealthcareSuite</span>
+              <span class="suite-name border-passed">CURAHealthcareSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-CURAHealthcareSuite" class="hide-methods failed suite-CURAHealthcareSuite"> (hide)</a> <!-- hide-methods failed suite-CURAHealthcareSuite -->
-                      <a href="#" panel-name="suite-CURAHealthcareSuite" class="show-methods failed suite-CURAHealthcareSuite"> (show)</a> <!-- show-methods failed suite-CURAHealthcareSuite -->
-                    </span>
-                    <div class="method-list-content failed suite-CURAHealthcareSuite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-CURAHealthcareSuite" title="Test.LoginTest" class="method navigator-link" hash-for-method="invalidLogin1">invalidLogin1</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-CURAHealthcareSuite -->
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,6 +104,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-CURAHealthcareSuite" title="Test.LoginTest" class="method navigator-link" hash-for-method="ValidForm">ValidForm</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-CURAHealthcareSuite" title="Test.LoginTest" class="method navigator-link" hash-for-method="invalidLogin1">invalidLogin1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -147,26 +138,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-CURAHealthcareSuite" class="panel CURAHealthcareSuite">
-          <div class="suite-CURAHealthcareSuite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">Test.LoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="invalidLogin1">
-                  </a> <!-- invalidLogin1 -->
-                  <span class="method-name">invalidLogin1</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [Mahesh] but found [https://katalon-demo-cura.herokuapp.com/profile.php#login]
-	at Test.LoginTest.invalidLogin1(LoginTest.java:28)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-CURAHealthcareSuite-class-failed -->
           <div class="suite-CURAHealthcareSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -178,6 +149,13 @@
                   <a name="ValidForm">
                   </a> <!-- ValidForm -->
                   <span class="method-name">ValidForm</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="invalidLogin1">
+                  </a> <!-- invalidLogin1 -->
+                  <span class="method-name">invalidLogin1</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -260,30 +238,30 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ValidForm')
+data.setCell(0, 1, 'login')
 data.setCell(0, 2, 'Test.LoginTest')
-data.setCell(0, 3, 4565);
+data.setCell(0, 3, 3817);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'invalidLogin2')
+data.setCell(1, 1, 'ValidForm')
 data.setCell(1, 2, 'Test.LoginTest')
-data.setCell(1, 3, 4349);
+data.setCell(1, 3, 3736);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'invalidLogin1')
+data.setCell(2, 1, 'invalidLogin2')
 data.setCell(2, 2, 'Test.LoginTest')
-data.setCell(2, 3, 4060);
+data.setCell(2, 3, 3360);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'login')
+data.setCell(3, 1, 'invalidLogin1')
 data.setCell(3, 2, 'Test.LoginTest')
-data.setCell(3, 3, 2718);
+data.setCell(3, 3, 3175);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'makeAppointment')
 data.setCell(4, 2, 'Test.LoginTest')
-data.setCell(4, 3, 1266);
+data.setCell(4, 3, 967);
 window.suiteTableData['CURAHealthcareSuite']= { tableData: data, tableDiv: 'times-div-CURAHealthcareSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 15 seconds</span>
               <div id="times-div-CURAHealthcareSuite">
               </div> <!-- times-div-CURAHealthcareSuite -->
             </div> <!-- times-div -->
@@ -316,29 +294,27 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">makeAppointment</span>
-                <span class="method-start">23459 ms</span>
+                <span class="method-start">10263 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">invalidLogin1</span>
-                <span class="method-start">24733 ms</span>
+                <span class="method-start">11239 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">invalidLogin2</span>
-                <span class="method-start">29329 ms</span>
+                <span class="method-start">14432 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">login</span>
-                <span class="method-start">33685 ms</span>
+                <span class="method-start">17802 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">ValidForm</span>
-                <span class="method-start">36410 ms</span>
+                <span class="method-start">21622 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">close</span>
-                <span class="method-start">40982 ms</span>
+                <span class="method-start">25363 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

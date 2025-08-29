@@ -1,79 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-29T21:06:32 IST" name="CURAHealthcareSuite" finished-at="2025-08-29T21:07:13 IST" duration-ms="41458">
+  <suite started-at="2025-08-29T21:35:55 IST" name="CURAHealthcareSuite" finished-at="2025-08-29T21:36:21 IST" duration-ms="25788">
     <groups>
     </groups>
-    <test started-at="2025-08-29T21:06:32 IST" name="LoginTest" finished-at="2025-08-29T21:07:13 IST" duration-ms="41458">
+    <test started-at="2025-08-29T21:35:55 IST" name="LoginTest" finished-at="2025-08-29T21:36:21 IST" duration-ms="25788">
       <class name="Test.LoginTest">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:06:32 IST" name="invokeBrowser" finished-at="2025-08-29T21:06:55 IST" duration-ms="23413" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:35:56 IST" name="invokeBrowser" finished-at="2025-08-29T21:36:06 IST" duration-ms="10228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="makeAppointment()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:06:55 IST" name="makeAppointment" finished-at="2025-08-29T21:06:57 IST" duration-ms="1266" status="PASS">
+        <test-method signature="makeAppointment()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:36:06 IST" name="makeAppointment" finished-at="2025-08-29T21:36:07 IST" duration-ms="967" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- makeAppointment -->
-        <test-method signature="invalidLogin1()[pri:1, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:06:57 IST" name="invalidLogin1" finished-at="2025-08-29T21:07:01 IST" duration-ms="4060" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Mahesh] but found [https://katalon-demo-cura.herokuapp.com/profile.php#login]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Mahesh] but found [https://katalon-demo-cura.herokuapp.com/profile.php#login]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at Test.LoginTest.invalidLogin1(LoginTest.java:28)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="invalidLogin1()[pri:1, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:36:07 IST" name="invalidLogin1" finished-at="2025-08-29T21:36:10 IST" duration-ms="3175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin1 -->
-        <test-method signature="invalidLogin2()[pri:2, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:07:01 IST" name="invalidLogin2" finished-at="2025-08-29T21:07:06 IST" duration-ms="4349" status="PASS">
+        <test-method signature="invalidLogin2()[pri:2, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:36:10 IST" name="invalidLogin2" finished-at="2025-08-29T21:36:13 IST" duration-ms="3360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin2 -->
-        <test-method signature="login()[pri:3, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:07:06 IST" name="login" finished-at="2025-08-29T21:07:08 IST" duration-ms="2718" status="PASS">
+        <test-method signature="login()[pri:3, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:36:13 IST" name="login" finished-at="2025-08-29T21:36:17 IST" duration-ms="3817" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="ValidForm()[pri:4, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:07:08 IST" name="ValidForm" finished-at="2025-08-29T21:07:13 IST" duration-ms="4565" status="PASS">
+        <test-method signature="ValidForm()[pri:4, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:36:17 IST" name="ValidForm" finished-at="2025-08-29T21:36:21 IST" duration-ms="3736" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidForm -->
-        <test-method is-config="true" signature="close()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:07:13 IST" name="close" finished-at="2025-08-29T21:07:13 IST" duration-ms="431" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-08-29T21:36:21 IST" name="close" finished-at="2025-08-29T21:36:21 IST" duration-ms="376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
