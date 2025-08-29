@@ -1,4 +1,5 @@
 package Test;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -23,6 +24,8 @@ public class LoginTest extends BaseTest {
 	public void invalidLogin1() throws Exception
 	{
 		LoginFromDB(1);
+		String url = driver.getCurrentUrl();
+		Assert.assertEquals(url, "Mahesh");
 	}
 	
 	@Test(priority = 2)
