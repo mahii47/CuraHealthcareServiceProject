@@ -5,51 +5,36 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.Assert;
+import drivers.DriverFactory;
 
 public class BaseTest implements IBrowserActions {
 
-	protected WebDriver driver;
+	public static WebDriver driver;
 	WebDriverWait wait;
 	@Override
 	public void openBrowser() {
-		// TODO Auto-generated method stub
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--incognito"); // Incognito mode
-		options.addArguments("--start-maximized"); // Optional: start maximized
-		options.addArguments("--disable-notifications"); // Optional: disable popups
-		driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
+		DriverFactory.initDriver();
+		driver=DriverFactory.getDriver();
 	}
 	@Override
 	public void closeBrowser() {
-		// TODO Auto-generated method stub
-		if(driver!=null)
-		{
-			driver.quit();
-		}
+		DriverFactory.quitDriver();
 	}
 	@Override
 	public void navigateToUrl(String url) {
-		// TODO Auto-generated method stub
 		driver.get(url);		
 	}
 	@Override
 	public void enterText(String locator, String value) {
-		// TODO Auto-generated method stub
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.findElement(By.id(locator)).sendKeys(value);	
 	}
 	@Override
 	public void clickByxPath(String locator) {
-		// TODO Auto-generated method stub
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		driver.findElement(By.xpath(locator)).click();
 	}
@@ -59,29 +44,24 @@ public class BaseTest implements IBrowserActions {
 	}
 	@Override
 	public String getText(String locator) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
 	public void waitForElement(String locator, int timeout) {
-		// TODO Auto-generated method stub
 		wait = new WebDriverWait(driver,Duration.ofSeconds(timeout));	
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
 }
 	@Override
 	public void logout(String locator) {
-		// TODO Auto-generated method stub	
 	}
 	@Override
 	public void dropdown(String locator,String text) {
-		// TODO Auto-generated method stub
 		WebElement dropdown = driver.findElement(By.id(locator));
 		Select select = new Select(dropdown);
 		select.selectByVisibleText(text);
 	}
 	@Override
 	public void selectCheckbox(String locator) {
-		// TODO Auto-generated method stub
 		WebElement checkbox = driver.findElement(By.id(locator));
 		if(!checkbox.isSelected())
 		{
@@ -92,23 +72,19 @@ public class BaseTest implements IBrowserActions {
 			checkbox.click();
 		}
 	}
-
 	@Override
 	public void selectDateByInput(String locator, String date) {
-		// TODO Auto-generated method stub
 		WebElement dateFiled = driver.findElement(By.id(locator));
 		dateFiled.clear();
 		dateFiled.sendKeys(date);	
 	}
 	@Override
 	public void clickById(String locator) {
-		// TODO Auto-generated method stub
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
 		driver.findElement(By.id(locator)).click();
 	}
 	@Override
 	public void sleep() throws InterruptedException {
-		// TODO Auto-generated method stub
 		Thread.sleep(2000);	
 	}
 	public void selectRadioButtonById(String name, String id) {
@@ -120,4 +96,42 @@ public class BaseTest implements IBrowserActions {
 	        }
 	    }
 	}
+	public void LoginFromDB(int id) throws Exception {
+	    ResultSet rs = DatabaseUtils.getData("SELECT username, password FROM login_data WHERE id = "+id);
+	    rs.next();
+	    String username = rs.getString("username");
+	    String password = rs.getString("password");
+
+	    waitForElement("txt-username", 20);
+	    enterText("txt-username", username);
+	    waitForElement("txt-password", 20);
+	    enterText("txt-password", password);
+	    waitForElement("btn-login", 20);
+	    Loginclick("btn-login");
+	    sleep();
+	    
+	}
+	public void FillForm(int id) throws Exception
+	{
+		ResultSet rs = DatabaseUtils.getData("Select facility,Visit_Date,Comment from fill_form where id ="+id);
+		rs.next();
+		
+		String facility = rs.getString("facility");
+		String Visit_Date = rs.getString("Visit_Date");
+		String Comment = rs.getString("Comment");
+		
+		waitForElement("combo_facility",20);
+		dropdown("combo_facility",facility);
+		selectCheckbox("chk_hospotal_readmission");
+		selectRadioButtonById("programs","radio_program_medicaid");
+		waitForElement("txt_visit_date",20);
+		selectDateByInput("txt_visit_date",Visit_Date);
+		waitForElement("txt_comment",20);
+		clickById("txt_comment");
+		enterText("txt_comment",Comment);
+		clickById("btn-book-appointment");
+		String url = driver.getCurrentUrl();
+		Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary", url);
+		sleep();
+	}	
 }
