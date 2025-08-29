@@ -6,4 +6,8 @@
             <class name="Test.LoginTest"/>
         </classes>
     </test>
+    <listeners>
+    <listener class-name="listeners.TestListener"/>
+</listeners>
+
 </suite>
