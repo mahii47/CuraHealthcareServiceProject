@@ -1,25 +1,33 @@
 pipeline {
     agent any
 
-    stages {
-      
+    tools {
+        maven 'Maven'   // Make sure you configured Maven in Jenkins Global Tool Configuration
+        jdk 'JDK11'     // (Optional) Configure JDK if needed
+    }
 
-        stage('Maven clean') {
+    stages {
+        stage('Maven Clean') {
             steps {
-                dir("CuraHealthcareProject") {  // 🔄 Navigate into the correct folder
-                    bat 'dir'  // 🔍 Verify `pom.xml`
-                    powershell 'mvn clean'
+                dir("CuraHealthcareProject") {  // Go inside project folder
+                    bat 'dir'                   // Just to check files
+                    bat 'mvn clean'             // Use bat for Windows, sh for Linux
                 }
             }
         }
-        
-         stage('Maven Test') {
+
+        stage('Maven Test') {
             steps {
-                dir("CuraHealthcareProject") {  // 🔄 Navigate into the correct folder
-                    bat 'dir'  // 🔍 Verify `pom.xml`
-                    powershell 'mvn test'
+                dir("CuraHealthcareProject") {
+                    bat 'mvn test'
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            junit 'CuraHealthcareProject/target/surefire-reports/*.xml'  // Publish test results
         }
     }
 }
