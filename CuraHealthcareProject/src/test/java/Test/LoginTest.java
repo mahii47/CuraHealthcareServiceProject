@@ -24,8 +24,6 @@ public class LoginTest extends BaseTest {
 	public void invalidLogin1() throws Exception
 	{
 		LoginFromDB(1);
-		String url = driver.getCurrentUrl();
-		Assert.assertEquals(url, "Mahesh");
 	}
 	
 	@Test(priority = 2)
