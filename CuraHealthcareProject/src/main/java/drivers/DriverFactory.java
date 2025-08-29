@@ -12,9 +12,9 @@ public class DriverFactory {
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
-		options.addArguments("--incognito"); // Incognito mode
-		options.addArguments("--start-maximized"); // Optional: start maximized
-		options.addArguments("--disable-notifications"); // Optional: disable popups
+		options.addArguments("--incognito"); 
+		options.addArguments("--start-maximized"); 
+		options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
