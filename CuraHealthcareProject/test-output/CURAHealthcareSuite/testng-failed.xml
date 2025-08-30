@@ -9,8 +9,8 @@
       <class name="Test.LoginTest">
         <methods>
           <include name="invokeBrowser"/>
+          <include name="ValidForm"/>
           <include name="close"/>
-          <include name="invalidLogin1"/>
         </methods>
       </class> <!-- Test.LoginTest -->
     </classes>

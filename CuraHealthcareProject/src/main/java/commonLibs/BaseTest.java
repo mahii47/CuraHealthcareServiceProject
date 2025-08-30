@@ -130,6 +130,7 @@ public class BaseTest implements IBrowserActions {
 		clickById("txt_comment");
 		enterText("txt_comment",Comment);
 		clickById("btn-book-appointment");
+		sleep();
 		String url = driver.getCurrentUrl();
 		Assert.assertEquals("https://katalon-demo-cura.herokuapp.com/appointment.php#summary", url);
 		sleep();
