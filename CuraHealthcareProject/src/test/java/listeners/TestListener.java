@@ -2,7 +2,6 @@ package listeners;
 
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.openqa.selenium.WebDriver;
 import Utility.ScreenshotUtils;
 import commonLibs.BaseTest;  // your base test where driver is managed
 
