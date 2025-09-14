@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
 	@Test(priority = 3)
 	public void login() throws Exception
 	{
-		LoginFromDB(31);
+		LoginFromDB(3);
 	}
 	@Test(priority = 4)
 	public void ValidForm() throws Exception
