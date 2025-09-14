@@ -10,7 +10,6 @@ pipeline {
         stage('Maven Clean') {
             steps {
                 dir("CuraHealthcareProject") {
-                    bat 'dir'
                     bat 'mvn clean'
                 }
             }
@@ -31,12 +30,12 @@ pipeline {
         }
         failure {
             emailext(
-                subject: "Build Failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """<p>Build failed!</p>
-                         <p>Job: ${env.JOB_NAME}</p>
-                         <p>Build Number: ${env.BUILD_NUMBER}</p>
-                         <p>Check console output at: ${env.BUILD_URL}</p>""",
-                to: 'mahmankar333@gmail.com'
+                to: 'mahmankar333@gmail.com',
+                subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """Hi Mahii,<br><br>
+                         The build <b>${env.JOB_NAME} #${env.BUILD_NUMBER}</b> has <b>FAILED</b>.<br>
+                         Check the console output: <a href='${env.BUILD_URL}'>Build Logs</a>.<br><br>
+                         Regards,<br>Jenkins"""
             )
         }
     }

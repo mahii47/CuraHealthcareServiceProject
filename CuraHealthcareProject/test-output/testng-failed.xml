@@ -8,6 +8,7 @@
     <classes>
       <class name="Test.LoginTest">
         <methods>
+          <include name="login"/>
           <include name="invokeBrowser"/>
           <include name="ValidForm"/>
           <include name="close"/>
