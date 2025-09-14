@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'
-        jdk 'JDK11'
+        maven 'Maven'   // Make sure Maven is configured in Global Tool Configuration
+        jdk 'JDK11'     // Ensure JDK11 is configured too
     }
 
     stages {
@@ -26,16 +26,32 @@ pipeline {
 
     post {
         always {
+            // Publish JUnit test reports
             junit 'CuraHealthcareProject/target/surefire-reports/*.xml'
         }
+
         failure {
+            // Send email when build fails
             emailext(
                 to: 'mahmankar333@gmail.com',
                 subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """Hi Mahii,<br><br>
-                         The build <b>${env.JOB_NAME} #${env.BUILD_NUMBER}</b> has <b>FAILED</b>.<br>
-                         Check the console output: <a href='${env.BUILD_URL}'>Build Logs</a>.<br><br>
-                         Regards,<br>Jenkins"""
+                body: """
+                    <h2 style="color:#d9534f;">Build Failure Notification</h2>
+                    Hello Mahii,<br><br>
+                    The Jenkins build <b>${env.JOB_NAME} #${env.BUILD_NUMBER}</b> has <b>FAILED</b>.<br><br>
+                    
+                    <b>Build Details:</b><br>
+                    - Job: ${env.JOB_NAME}<br>
+                    - Build Number: ${env.BUILD_NUMBER}<br>
+                    - URL: <a href='${env.BUILD_URL}'>Click here to view logs</a><br><br>
+                    
+                    <b>Next Steps:</b><br>
+                    Please review the logs and test results.<br><br>
+                    
+                    Regards,<br>
+                    Jenkins CI/CD
+                """,
+                mimeType: 'text/html'
             )
         }
     }
