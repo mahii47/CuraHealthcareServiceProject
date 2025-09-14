@@ -2,16 +2,16 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'   // Make sure you configured Maven in Jenkins Global Tool Configuration
-        jdk 'JDK11'     // (Optional) Configure JDK if needed
+        maven 'Maven'
+        jdk 'JDK11'
     }
 
     stages {
         stage('Maven Clean') {
             steps {
-                dir("CuraHealthcareProject") {  // Go inside project folder
-                    bat 'dir'                   // Just to check files
-                    bat 'mvn clean'             // Use bat for Windows, sh for Linux
+                dir("CuraHealthcareProject") {
+                    bat 'dir'
+                    bat 'mvn clean'
                 }
             }
         }
@@ -27,7 +27,17 @@ pipeline {
 
     post {
         always {
-            junit 'CuraHealthcareProject/target/surefire-reports/*.xml'  // Publish test results
+            junit 'CuraHealthcareProject/target/surefire-reports/*.xml'
+        }
+        failure {
+            emailext(
+                subject: "Build Failed in Jenkins: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """<p>Build failed!</p>
+                         <p>Job: ${env.JOB_NAME}</p>
+                         <p>Build Number: ${env.BUILD_NUMBER}</p>
+                         <p>Check console output at: ${env.BUILD_URL}</p>""",
+                to: 'mahmankar333@gmail.com'
+            )
         }
     }
 }
