@@ -11,10 +11,12 @@ public class DriverFactory {
 	{
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-	//	options.addArguments("--headless");
+		options.addArguments("--headless");
 		options.addArguments("--incognito"); 
 		options.addArguments("--start-maximized"); 
 		options.addArguments("--disable-notifications");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--no-sandbox");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
