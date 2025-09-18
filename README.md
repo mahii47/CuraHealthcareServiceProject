@@ -12,7 +12,7 @@ This repository contains an end-to-end automation framework for the [CURA Health
 * **Config-Driven** – All hardcoded values (URLs, DB credentials, etc.) are externalized in a properties file
 * **Hybrid Framework** – Combination of Page Object Model (POM) + Data-driven + Config-driven approach
 * **CI/CD Ready** – Jenkins pipeline integration for automated test execution
-* **Cross-Browser Support** – Chrome, Edge, and Incognito mode
+* **Cross-Browser Support** – Chrome and Incognito mode
 
 ---
 
