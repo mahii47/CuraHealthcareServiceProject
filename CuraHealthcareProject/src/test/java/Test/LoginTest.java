@@ -3,9 +3,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import commonLibs.BaseTest;
+import commonLibs.ConfigReader;
 public class LoginTest extends BaseTest {
 	
-	String url = "https://katalon-demo-cura.herokuapp.com/";
+	String url = ConfigReader.getProperty("app.url");
 	boolean isLoggedIn = false;
 	@BeforeClass
 	public void invokeBrowser() throws InterruptedException

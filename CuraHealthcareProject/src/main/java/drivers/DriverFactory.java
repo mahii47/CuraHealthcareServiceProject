@@ -11,7 +11,7 @@ public class DriverFactory {
 	{
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
+	//	options.addArguments("--headless");
 		options.addArguments("--incognito"); 
 		options.addArguments("--start-maximized"); 
 		options.addArguments("--disable-notifications");
@@ -27,7 +27,11 @@ public class DriverFactory {
 	}
 	public static void quitDriver()
 	{
-		driver.quit();
+		if(driver!=null)
+		{
+			driver.quit();
+			driver = null;
+		}
 	}
 	
 }

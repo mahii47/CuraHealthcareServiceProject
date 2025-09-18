@@ -9,37 +9,14 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">CURAHealthcareSuite</th></tr>
-<tr><td><a href="#t0">LoginTest</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">43,557</td><td></td><td></td></tr>
+<tr><td><a href="#t0">LoginTest</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">29,067</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">CURAHealthcareSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">Test.LoginTest</td><td><a href="#m0">ValidForm</a></td><td rowspan="1">1757854913952</td><td rowspan="1">20339</td></tr><tr class="failedeven"><td><a href="#m1">login</a></td><td rowspan="1">1757854913768</td><td rowspan="1">96</td></tr><tr><th colspan="4">LoginTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">Test.LoginTest</td><td><a href="#m2">invalidLogin1</a></td><td rowspan="1">1757854908342</td><td rowspan="1">2851</td></tr><tr class="passedeven"><td><a href="#m3">invalidLogin2</a></td><td rowspan="1">1757854911221</td><td rowspan="1">2537</td></tr><tr class="passedeven"><td><a href="#m4">makeAppointment</a></td><td rowspan="1">1757854907619</td><td rowspan="1">715</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">CURAHealthcareSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">Test.LoginTest</td><td><a href="#m0">ValidForm</a></td><td rowspan="1">1758181779496</td><td rowspan="1">6250</td></tr><tr class="passedeven"><td><a href="#m1">invalidLogin1</a></td><td rowspan="1">1758181767969</td><td rowspan="1">4427</td></tr><tr class="passedeven"><td><a href="#m2">invalidLogin2</a></td><td rowspan="1">1758181772404</td><td rowspan="1">4230</td></tr><tr class="passedeven"><td><a href="#m3">login</a></td><td rowspan="1">1758181776637</td><td rowspan="1">2854</td></tr><tr class="passedeven"><td><a href="#m4">makeAppointment</a></td><td rowspan="1">1758181767034</td><td rowspan="1">908</td></tr></tbody>
 </table>
-<h2>LoginTest</h2><h3 id="m0">Test.LoginTest#ValidForm</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: combo_facility (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\mahma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56938}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56938/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c5cc973153e23340bfd797ed6b1de9
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-	at commonLibs.BaseTest.waitForElement(BaseTest.java:54)
-	at commonLibs.BaseTest.FillForm(BaseTest.java:125)
-	at Test.LoginTest.ValidForm(LoginTest.java:41)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">Test.LoginTest#login</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.sql.SQLException: Illegal operation on empty result set.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:532)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:878)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896)
-	at commonLibs.BaseTest.LoginFromDB(BaseTest.java:104)
-	at Test.LoginTest.login(LoginTest.java:36)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Test.LoginTest#invalidLogin1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">Test.LoginTest#invalidLogin2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>LoginTest</h2><h3 id="m0">Test.LoginTest#ValidForm</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Test.LoginTest#invalidLogin1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Test.LoginTest#invalidLogin2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Test.LoginTest#login</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m4">Test.LoginTest#makeAppointment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

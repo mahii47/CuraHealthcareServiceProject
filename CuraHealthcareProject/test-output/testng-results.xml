@@ -1,131 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-14T18:31:31 IST" name="CURAHealthcareSuite" finished-at="2025-09-14T18:32:14 IST" duration-ms="43557">
+  <suite started-at="2025-09-18T13:19:16 IST" name="CURAHealthcareSuite" finished-at="2025-09-18T13:19:45 IST" duration-ms="29067">
     <groups>
     </groups>
-    <test started-at="2025-09-14T18:31:31 IST" name="LoginTest" finished-at="2025-09-14T18:32:14 IST" duration-ms="43557">
+    <test started-at="2025-09-18T13:19:16 IST" name="LoginTest" finished-at="2025-09-18T13:19:45 IST" duration-ms="29067">
       <class name="Test.LoginTest">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-09-14T18:31:31 IST" name="invokeBrowser" finished-at="2025-09-14T18:31:47 IST" duration-ms="16483" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:16 IST" name="invokeBrowser" finished-at="2025-09-18T13:19:26 IST" duration-ms="10028" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="makeAppointment()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-09-14T18:31:47 IST" name="makeAppointment" finished-at="2025-09-14T18:31:48 IST" duration-ms="715" status="PASS">
+        <test-method signature="makeAppointment()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:27 IST" name="makeAppointment" finished-at="2025-09-18T13:19:27 IST" duration-ms="908" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- makeAppointment -->
-        <test-method signature="invalidLogin1()[pri:1, instance:Test.LoginTest@3e96bacf]" started-at="2025-09-14T18:31:48 IST" name="invalidLogin1" finished-at="2025-09-14T18:31:51 IST" duration-ms="2851" status="PASS">
+        <test-method signature="invalidLogin1()[pri:1, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:27 IST" name="invalidLogin1" finished-at="2025-09-18T13:19:32 IST" duration-ms="4427" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin1 -->
-        <test-method signature="invalidLogin2()[pri:2, instance:Test.LoginTest@3e96bacf]" started-at="2025-09-14T18:31:51 IST" name="invalidLogin2" finished-at="2025-09-14T18:31:53 IST" duration-ms="2537" status="PASS">
+        <test-method signature="invalidLogin2()[pri:2, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:32 IST" name="invalidLogin2" finished-at="2025-09-18T13:19:36 IST" duration-ms="4230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin2 -->
-        <test-method signature="login()[pri:3, instance:Test.LoginTest@3e96bacf]" started-at="2025-09-14T18:31:53 IST" name="login" finished-at="2025-09-14T18:31:53 IST" duration-ms="96" status="FAIL">
-          <exception class="java.sql.SQLException">
-            <message>
-              <![CDATA[Illegal operation on empty result set.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.sql.SQLException: Illegal operation on empty result set.
-at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
-at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
-at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
-at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
-at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:532)
-at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:878)
-at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896)
-at commonLibs.BaseTest.LoginFromDB(BaseTest.java:104)
-at Test.LoginTest.login(LoginTest.java:36)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.sql.SQLException -->
+        <test-method signature="login()[pri:3, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:36 IST" name="login" finished-at="2025-09-18T13:19:39 IST" duration-ms="2854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="ValidForm()[pri:4, instance:Test.LoginTest@3e96bacf]" started-at="2025-09-14T18:31:53 IST" name="ValidForm" finished-at="2025-09-14T18:32:14 IST" duration-ms="20339" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.id: combo_facility (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\mahma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56938}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56938/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c5cc973153e23340bfd797ed6b1de9]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: combo_facility (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\mahma\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56938}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56938/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 26c5cc973153e23340bfd797ed6b1de9
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-at commonLibs.BaseTest.waitForElement(BaseTest.java:54)
-at commonLibs.BaseTest.FillForm(BaseTest.java:125)
-at Test.LoginTest.ValidForm(LoginTest.java:41)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="ValidForm()[pri:4, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:39 IST" name="ValidForm" finished-at="2025-09-18T13:19:45 IST" duration-ms="6250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidForm -->
-        <test-method is-config="true" signature="close()[pri:0, instance:Test.LoginTest@3e96bacf]" started-at="2025-09-14T18:32:14 IST" name="close" finished-at="2025-09-14T18:32:14 IST" duration-ms="250" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:45 IST" name="close" finished-at="2025-09-18T13:19:45 IST" duration-ms="246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
