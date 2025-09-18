@@ -4,10 +4,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import commonLibs.BaseTest;
 import commonLibs.ConfigReader;
+import pages.AppointmentPage;
+import pages.LoginPage;
 public class LoginTest extends BaseTest {
 	
 	String url = ConfigReader.getProperty("app.url");
 	boolean isLoggedIn = false;
+	LoginPage lp = new LoginPage();
+	AppointmentPage ap = new AppointmentPage();
 	@BeforeClass
 	public void invokeBrowser() throws InterruptedException
 	{
@@ -23,23 +27,23 @@ public class LoginTest extends BaseTest {
 	@Test(priority = 1)
 	public void invalidLogin1() throws Exception
 	{
-		LoginFromDB(1);
+		lp.LoginFromDB(1);
 	}
 	
 	@Test(priority = 2)
 	public void invalidLogin2() throws Exception
 	{
-		LoginFromDB(2);	
+		lp.LoginFromDB(2);	
 	}
 	@Test(priority = 3)
 	public void login() throws Exception
 	{
-		LoginFromDB(3);
+		lp.LoginFromDB(3);
 	}
 	@Test(priority = 4)
 	public void ValidForm() throws Exception
 	{
-		FillForm(1);
+		ap.FillForm(1);
 	}
 	@AfterClass
 	public void close()

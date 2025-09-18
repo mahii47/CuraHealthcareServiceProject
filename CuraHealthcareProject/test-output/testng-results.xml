@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-18T13:19:16 IST" name="CURAHealthcareSuite" finished-at="2025-09-18T13:19:45 IST" duration-ms="29067">
+  <suite started-at="2025-09-18T13:59:51 IST" name="CURAHealthcareSuite" finished-at="2025-09-18T14:00:18 IST" duration-ms="27179">
     <groups>
     </groups>
-    <test started-at="2025-09-18T13:19:16 IST" name="LoginTest" finished-at="2025-09-18T13:19:45 IST" duration-ms="29067">
+    <test started-at="2025-09-18T13:59:51 IST" name="LoginTest" finished-at="2025-09-18T14:00:18 IST" duration-ms="27179">
       <class name="Test.LoginTest">
-        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:16 IST" name="invokeBrowser" finished-at="2025-09-18T13:19:26 IST" duration-ms="10028" status="PASS">
+        <test-method is-config="true" signature="invokeBrowser()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:59:51 IST" name="invokeBrowser" finished-at="2025-09-18T14:00:03 IST" duration-ms="11255" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invokeBrowser -->
-        <test-method signature="makeAppointment()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:27 IST" name="makeAppointment" finished-at="2025-09-18T13:19:27 IST" duration-ms="908" status="PASS">
+        <test-method signature="makeAppointment()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T14:00:03 IST" name="makeAppointment" finished-at="2025-09-18T14:00:03 IST" duration-ms="878" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- makeAppointment -->
-        <test-method signature="invalidLogin1()[pri:1, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:27 IST" name="invalidLogin1" finished-at="2025-09-18T13:19:32 IST" duration-ms="4427" status="PASS">
+        <test-method signature="invalidLogin1()[pri:1, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T14:00:03 IST" name="invalidLogin1" finished-at="2025-09-18T14:00:07 IST" duration-ms="3156" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin1 -->
-        <test-method signature="invalidLogin2()[pri:2, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:32 IST" name="invalidLogin2" finished-at="2025-09-18T13:19:36 IST" duration-ms="4230" status="PASS">
+        <test-method signature="invalidLogin2()[pri:2, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T14:00:07 IST" name="invalidLogin2" finished-at="2025-09-18T14:00:09 IST" duration-ms="2537" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLogin2 -->
-        <test-method signature="login()[pri:3, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:36 IST" name="login" finished-at="2025-09-18T13:19:39 IST" duration-ms="2854" status="PASS">
+        <test-method signature="login()[pri:3, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T14:00:09 IST" name="login" finished-at="2025-09-18T14:00:12 IST" duration-ms="2574" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="ValidForm()[pri:4, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:39 IST" name="ValidForm" finished-at="2025-09-18T13:19:45 IST" duration-ms="6250" status="PASS">
+        <test-method signature="ValidForm()[pri:4, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T14:00:12 IST" name="ValidForm" finished-at="2025-09-18T14:00:18 IST" duration-ms="6087" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidForm -->
-        <test-method is-config="true" signature="close()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T13:19:45 IST" name="close" finished-at="2025-09-18T13:19:45 IST" duration-ms="246" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:Test.LoginTest@484970b0]" started-at="2025-09-18T14:00:18 IST" name="close" finished-at="2025-09-18T14:00:18 IST" duration-ms="595" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
